@@ -30,32 +30,32 @@ const Guitar Inventory::search(const Guitar& searchGuitar) const{
 
         // builder
         string builder = searchGuitar.getBuilder();
-        if (!(builder.compare("")) &&
-               (!builder.compare(i->getBuilder())))
+        if (!(builder.empty()) &&
+               (builder != i->getBuilder()))
             continue;
         
         // model
         string model = searchGuitar.getModel();
-        if (!(model.compare("")) &&
-               (!model.compare(i->getModel())))
+        if (!(model.empty()) &&
+               (model != i->getModel()))
             continue;
 
         // type
         string type = searchGuitar.getType();
-        if (!(type.compare("")) &&
-               (!type.compare(i->getType())))
+        if (!(type.empty()) &&
+               (type != i->getType()))
             continue;
 
         // backWood
         string backWood = searchGuitar.getBackWood();
-        if (!(backWood.compare("")) &&
-               (!backWood.compare(i->getBackWood())))
+        if (!(backWood.empty()) &&
+               (backWood != i->getBackWood()))
             continue;
 
         // topWood
         string topWood = searchGuitar.getTopWood();
-        if (!(topWood.compare("")) &&
-               (!topWood.compare(i->getTopWood())))
+        if (!(topWood.empty()) &&
+               (topWood != i->getTopWood()))
             continue;
 
         return *i;

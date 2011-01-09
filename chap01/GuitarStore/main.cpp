@@ -13,7 +13,7 @@ int main(int argc, const char *argv[])
     try{
         Guitar guitar = inventory.search(whatErinLikes);
 
-        cout << "Erin, you might like this" << guitar.getBuilder()
+        cout << "Erin, you might like this " << guitar.getBuilder()
             << " " << guitar.getModel()
             << " " << guitar.getType() << " guitar:" << endl
             << guitar.getBackWood() << " back and sides," << endl

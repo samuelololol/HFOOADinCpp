@@ -11,13 +11,13 @@ int main(int argc, const char *argv[])
                                   "electric", "Alder", "Alder");
 
     //add a guitar
-    inventory.addGuitar("V95693", 1499.95, "fender", "Stratocastor",
+    inventory.addGuitar("V95693", 1499.95, "Fender", "Stratocastor",
                         "electric", "Alder", "Alder");
 
     try{
         Guitar guitar = inventory.search(whatErinLikes);
 
-        cout << "Erin, you might like this" << guitar.getBuilder()
+        cout << "Erin, you might like this " << guitar.getBuilder()
             << " " << guitar.getModel()
             << " " << guitar.getType() << " guitar:" << endl
             << guitar.getBackWood() << " back and sides," << endl
