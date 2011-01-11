@@ -9,20 +9,25 @@ using namespace std;
 
 class Guitar {
     private:
-        string serialNumber_, builder_, model_, type_, backWood_, topWood_;
+        string serialNumber_;
+        string model_;
         double price_;
+        GBuilder builder_;
+        GType type_;
+        GWood backWood_;
+        GWood topWood_;
     public:
         Guitar();
         Guitar(string serialNumber, double price, 
-                GBuilder builder, string model,GType type,
-                GWood backWood, GWood topWood);
+                const GBuilder &builder, string model, const GType &type,
+                const GWood &backWood, const GWood &topWood);
         const string getSerialNumber() const;
         const double getPrice() const;
         void setPrice(float newPrice);
-        const string getBuilder() const;
+        const GBuilder getBuilder() const;
         const string getModel() const ;
-        const string getType() const;
-        const string getBackWood() const;
-        const string getTopWood() const;
+        const GType getType() const;
+        const GWood getBackWood() const;
+        const GWood getTopWood() const;
 };
 #endif

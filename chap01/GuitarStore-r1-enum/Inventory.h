@@ -12,8 +12,8 @@ private:
 public:
     Inventory ();
     void addGuitar(string serialNumber, double price, 
-                GBuilder builder, string model, 
-                GType type, GWood backWood, GWood topWood);
+                const GBuilder &builder, string model, 
+                const GType &type, const GWood &backWood, const GWood &topWood);
     const Guitar getGuitar(const string& serialNumber) const;
     const Guitar search(const Guitar& searchGuitar) const;
     virtual ~Inventory();

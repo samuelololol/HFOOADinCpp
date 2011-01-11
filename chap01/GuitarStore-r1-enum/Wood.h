@@ -6,11 +6,9 @@
 using namespace std;
 class GWood {
 
+    friend std::ostream& operator<<(std::ostream& os, const GWood &r);
     string tostring_;
 
-    GWood(string const s){
-        tostring_ = s;
-    }
 
 public:
     static const GWood INDIAN_ROSEWOOD;
@@ -23,7 +21,25 @@ public:
     static const GWood ALDER;
     static const GWood SITKA;
 
-    const string toString(){
-        return tostring_;
+    GWood(){}  
+    GWood(string const s)
+        :tostring_(s){}
+    GWood(const GWood &r)
+        :tostring_(r.toString()){}  
+
+    const string toString() const{
+        if ((tostring_ == "INDIAN_ROSEWOOD") || 
+            (tostring_ == "BRAZILIAN_ROSEWOOD") ||
+            (tostring_ == "MAHOGANY") ||
+            (tostring_ == "MAPLE") ||
+            (tostring_ == "COCOBOLO") ||
+            (tostring_ == "CEDAR") ||
+            (tostring_ == "ADIRONDACK") ||
+            (tostring_ == "ALDER") ||
+            (tostring_ == "SITKA")
+            ) 
+            return tostring_;
+        else
+            return "FAIL";
     }
 };

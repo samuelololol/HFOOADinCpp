@@ -3,8 +3,8 @@
 Inventory::Inventory() {}
 
 void Inventory:: addGuitar(string serialNumber, double price, 
-        GBuilder builder, string model, 
-        GType type, GWood backWood, GWood topWood)
+        const GBuilder &builder, string model, 
+        const GType &type, const GWood &backWood, const GWood &topWood)
 {
     Guitar guitar = Guitar (serialNumber, price, 
             builder, model, type,
@@ -29,9 +29,9 @@ const Guitar Inventory::search(const Guitar& searchGuitar) const{
         // Ignore price since that's unique
 
         // builder
-        string builder = searchGuitar.getBuilder();
-        if (!(builder.empty()) &&
-               (builder != i->getBuilder()))
+        GBuilder builder = searchGuitar.getBuilder();
+        if (!(builder.toString().empty()) &&
+               (builder.toString() != i->getBuilder().toString()))
             continue;
         
         // model
@@ -41,21 +41,21 @@ const Guitar Inventory::search(const Guitar& searchGuitar) const{
             continue;
 
         // type
-        string type = searchGuitar.getType();
-        if (!(type.empty()) &&
-               (type != i->getType()))
+        GType type = searchGuitar.getType();
+        if (!(type.toString().empty()) &&
+               (type.toString() != i->getType().toString()))
             continue;
 
         // backWood
-        string backWood = searchGuitar.getBackWood();
-        if (!(backWood.empty()) &&
-               (backWood != i->getBackWood()))
+        GWood backWood = searchGuitar.getBackWood();
+        if (!(backWood.toString().empty()) &&
+               (backWood.toString() != i->getBackWood().toString()))
             continue;
 
         // topWood
-        string topWood = searchGuitar.getTopWood();
-        if (!(topWood.empty()) &&
-               (topWood != i->getTopWood()))
+        GWood topWood = searchGuitar.getTopWood();
+        if (!(topWood.toString().empty()) &&
+               (topWood.toString() != i->getTopWood().toString()))
             continue;
 
         return *i;

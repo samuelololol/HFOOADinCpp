@@ -5,12 +5,10 @@
 
 using namespace std;
 class GBuilder {
-
+    
+    friend std::ostream& operator<<(std::ostream& os, const GBuilder &r);
     string tostring_;
 
-    GBuilder(string const s){
-        tostring_ = s;
-    }
 
 public:
     static const GBuilder FENDER;
@@ -22,7 +20,26 @@ public:
     static const GBuilder PRS;
     static const GBuilder ANY;
 
-    const string toString(){
-        return tostring_;
+    GBuilder(){}
+
+    GBuilder(string const s)
+        :tostring_(s){} 
+
+    GBuilder(const GBuilder &r)
+        :tostring_(r.toString()){}
+
+    const string toString() const{
+        if ((tostring_ == "FENDER") || 
+            (tostring_ == "MARTIN") ||
+            (tostring_ == "GIBSON") ||
+            (tostring_ == "COLLINGS") ||
+            (tostring_ == "OLSON") ||
+            (tostring_ == "RYAN") ||
+            (tostring_ == "PRS") ||
+            (tostring_ == "ANY") 
+            )
+            return tostring_;
+        else
+            return "Fail Type";
     }
 };

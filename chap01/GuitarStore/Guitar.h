@@ -5,7 +5,12 @@ using namespace std;
 
 class Guitar {
     private:
-        string serialNumber_, builder_, model_, type_, backWood_, topWood_;
+        string serialNumber_;
+        string builder_;
+        string model_;
+        string type_;
+        string backWood_;
+        string topWood_;
         double price_;
     public:
         Guitar();

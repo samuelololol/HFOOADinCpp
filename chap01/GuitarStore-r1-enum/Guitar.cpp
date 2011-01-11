@@ -2,16 +2,23 @@
 
 Guitar::Guitar(){}  
 Guitar::Guitar(string serialNumber, double price, 
-        GBuilder builder, string model,GType type,
-        GWood backWood, GWood topWood){
-
-    serialNumber_ = serialNumber;
-    price_ = price;
-    builder_ = builder.toString();
-    model_ = model;
-    type_ = type.toString();
-    backWood_ = backWood.toString();
-    topWood_ = topWood.toString();
+        const GBuilder &builder, string model,const GType &type,
+        const GWood &backWood, const GWood &topWood):
+    serialNumber_(serialNumber),
+    model_(model),
+    price_(price),
+    builder_(builder),
+    type_(type),
+    backWood_(backWood),
+    topWood_(topWood)
+{
+    //serialNumber_ = serialNumber;
+    //price_ = price;
+    //builder_ = builder.toString();
+    //model_ = model;
+    //type_ = type.toString();
+    //backWood_ = backWood.toString();
+    //topWood_ = topWood.toString();
 }
 const string Guitar::getSerialNumber() const{
     return serialNumber_;
@@ -23,18 +30,18 @@ const double Guitar::getPrice() const{
 void Guitar::setPrice(float newPrice){
     price_ = newPrice;
 }
-const string Guitar::getBuilder() const{
+const GBuilder Guitar::getBuilder() const{
     return builder_;
 }
 const string Guitar::getModel() const{
     return model_;
 }
-const string Guitar::getType() const{
+const GType Guitar::getType() const{
     return type_;
 }
-const string Guitar::getBackWood() const{
-    return builder_;
+const GWood Guitar::getBackWood() const{
+    return backWood_;
 }
-const string Guitar::getTopWood() const{
+const GWood Guitar::getTopWood() const{
     return topWood_;
 }

@@ -8,3 +8,9 @@ const GWood GWood::CEDAR("CEDAR");
 const GWood GWood::ADIRONDACK("ADIRONDACK");
 const GWood GWood::ALDER("ALDER");
 const GWood GWood::SITKA("SITKA");
+
+std::ostream& operator<<(std::ostream& os, const GWood &r)
+{
+    os << r.toString();
+    return os;
+}

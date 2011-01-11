@@ -6,17 +6,24 @@
 using namespace std;
 class GType {
 
+    friend std::ostream& operator<<(std::ostream& os, const GType &r);
     string tostring_;
 
-    GType(string const s){
-        tostring_ = s;
-    }
 
 public:
     static const GType ACOUSTIC;
     static const GType ELECTRIC;
 
-    const string toString(){
-        return tostring_;
+    GType(){}  
+    GType(const string& s)
+        :tostring_(s){}
+    GType(const GType &r)
+        :tostring_(r.toString()){}  
+
+    const string toString() const{
+        if ((tostring_ == "ACOUSTIC") || (tostring_ == "ELECTRIC"))
+            return tostring_;
+        else
+            return "FAIL";
     }
 };

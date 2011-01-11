@@ -32,7 +32,7 @@ const string Guitar::getType() const{
     return type_;
 }
 const string Guitar::getBackWood() const{
-    return builder_;
+    return backWood_;
 }
 const string Guitar::getTopWood() const{
     return topWood_;
