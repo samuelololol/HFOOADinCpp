@@ -3,8 +3,8 @@
 Inventory::Inventory() {}
 
 void Inventory:: addGuitar(string serialNumber, double price, 
-        string builder, string model, 
-        string type, string backWood, string topWood)
+        GBuilder builder, string model, 
+        GType type, GWood backWood, GWood topWood)
 {
     Guitar guitar = Guitar (serialNumber, price, 
             builder, model, type,

@@ -1,16 +1,17 @@
 #include "Guitar.h"
+
 Guitar::Guitar(){}  
 Guitar::Guitar(string serialNumber, double price, 
-        string builder, string model, string type,
-        string backWood, string topWood){
+        GBuilder builder, string model,GType type,
+        GWood backWood, GWood topWood){
 
     serialNumber_ = serialNumber;
     price_ = price;
-    builder_ = builder;
+    builder_ = builder.toString();
     model_ = model;
-    type_ = type;
-    backWood_ = backWood;
-    topWood_ = topWood;
+    type_ = type.toString();
+    backWood_ = backWood.toString();
+    topWood_ = topWood.toString();
 }
 const string Guitar::getSerialNumber() const{
     return serialNumber_;

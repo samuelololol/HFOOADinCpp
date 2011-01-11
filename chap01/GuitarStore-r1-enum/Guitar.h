@@ -1,6 +1,10 @@
 #ifndef __GUITAR_H__
 #define __GUITAR_H__
 #include <string>
+#include "Type.h"
+#include "Builder.h"
+#include "Wood.h"
+
 using namespace std;
 
 class Guitar {
@@ -10,8 +14,8 @@ class Guitar {
     public:
         Guitar();
         Guitar(string serialNumber, double price, 
-                string builder, string model, string type,
-                string backWood, string topWood);
+                GBuilder builder, string model,GType type,
+                GWood backWood, GWood topWood);
         const string getSerialNumber() const;
         const double getPrice() const;
         void setPrice(float newPrice);

@@ -1,14 +1,19 @@
 #include <iostream>
 #include "Guitar.h"
 #include "Inventory.h"
+
 using namespace std;
 
 int main(int argc, const char *argv[])
 {
     Inventory inventory;
 
-    Guitar whatErinLikes = Guitar("",0, "fender", "Stratocastor",
-                                  "electric", "Alder", "Alder");
+    Guitar whatErinLikes = Guitar("",0, GBuilder::FENDER, "Stratocastor",
+                                  GType::ELECTRIC, GWood::ALDER, GWood::ALDER);
+
+    //add a guitar
+    inventory.addGuitar("V95693", 1499.95, GBuilder::FENDER , "Stratocastor",
+                        GType::ELECTRIC, GWood::ALDER, GWood::ALDER);
 
     try{
         Guitar guitar = inventory.search(whatErinLikes);
