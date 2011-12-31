@@ -29,7 +29,8 @@ const list<Guitar> Inventory::search(const GuitarSpec& searchGuitar) const{
         // GuitarSpec
         GuitarSpec searchSpec = i->getSpec();
 
-        if(searchSpec.matches(searchGuitar))
+        //if(searchSpec.matches(searchGuitar))
+        if(searchSpec == searchGuitar)
             //add to list;
             matchingGuitars.push_back(*i);
     }

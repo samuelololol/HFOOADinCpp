@@ -31,6 +31,7 @@ class GuitarSpec {
         const GWood    getBackWood() const;
         const GWood    getTopWood() const;
         const bool     matches(const GuitarSpec otherSpec) const;
+        const bool     operator==(const GuitarSpec otherSpec) const;
 };
 
 class Guitar {

@@ -84,3 +84,6 @@ const bool GuitarSpec::matches(const GuitarSpec otherSpec) const{
         return false;
     return true;
 }
+const bool GuitarSpec::operator==(const GuitarSpec otherSpec) const{
+    return this->matches(otherSpec);
+}
