@@ -8,16 +8,14 @@ int main(int argc, const char *argv[])
 {
     Inventory inventory;
     GuitarSpec whatErinLikes = GuitarSpec(GBuilder::FENDER, "Stratocastor",
-                                  GType::ELECTRIC, 6, GWood::ALDER, GWood::ALDER);
+            GType::ELECTRIC, 6, GWood::ALDER, GWood::ALDER);
 
 
     //add a guitar
     GuitarSpec newspec = GuitarSpec(GBuilder::FENDER, "Stratocastor",
-                                    GType::ELECTRIC, 6, GWood::ALDER, GWood::ALDER);
-    inventory.addGuitar("V95693", 1499.95, newspec) ;
-    inventory.addGuitar("V9512", 1549.95, newspec) ;
-
-
+            GType::ELECTRIC, 6, GWood::ALDER, GWood::ALDER);
+    //inventory.addGuitar("V95693", 1499.95, newspec) ;
+    //inventory.addGuitar("V9512", 1549.95, newspec) ;
 
     try{
         list<Guitar> guitars = inventory.search(whatErinLikes);
@@ -27,11 +25,11 @@ int main(int argc, const char *argv[])
             GuitarSpec spec = i->getSpec();
 
             cout <<"  We have a " << spec.getBuilder()
-                 <<" " << spec.getModel()
-                 <<" " << spec.getType() << " guitar:" << endl
-                 <<"     " << spec.getBackWood() << " back and sides," << endl
-                 <<"     " << spec.getTopWood() << " top.\n  You can have it for only $"
-                 << i->getPrice() << "!\n  ----"  << endl;
+                <<" " << spec.getModel()
+                <<" " << spec.getType() << " guitar:" << endl
+                <<"     " << spec.getBackWood() << " back and sides," << endl
+                <<"     " << spec.getTopWood() << " top.\n  You can have it for only $"
+                << i->getPrice() << "!\n  ----"  << endl;
         }
     }
     catch(InventoryException &ie) {

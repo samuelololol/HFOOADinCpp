@@ -18,7 +18,6 @@ public:
     virtual ~Inventory();
 };
 
-
 class InventoryException : public myexception {
 public:
     InventoryException(){
@@ -27,8 +26,8 @@ public:
     InventoryException(const char* message){
         message_ = message;
     }
-    virtual const char* message() {
-        return message_;
-    }
+    //virtual const char* message() {
+    //    return message_;
+    //}
 };
 #endif
