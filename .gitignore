@@ -1,7 +1,23 @@
+# for c/c++
 *.swp
-
 *.o
 *.out
-
 tags
 cscope*
+
+# for java in InteliJ IDEA
+.idea/*
+bin/*
+out/*
+.settings/*
+
+*.class
+*.classpath
+*.iml
+*.eml
+*.xml
+*.properties
+
+
+.project
+.classpath
